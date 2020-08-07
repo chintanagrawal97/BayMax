@@ -1,0 +1,7 @@
+The Glue Crwaler by design will always creates tables with unique names. You cannot edit these table names because of the way the datacatalog keeps track of tables and related metadata in the backend system. There is no direct way to name the table when table is created by crawler. There is an option to provide the prefix to the table name but the suffix part is automatically picked by the s3 directory files on which crawler will be run. However there are some indirect ways or options wherein one can change the table name to any custom name:
+
+Create a table manually in Glue, then use a crawler to update it. This can done as follows: 
+1. First, you would go to Tables in the console, and manually create a table with the name you desire. The details and columns don't have to be correct, just the basic required info and maybe two column names. (Glue console --> click on "Tables" in left pane --> click on "Add tables" --> click "Add table manually"). Add the correct s3 directory in which files are present.
+2. Then you will create (or edit) your crawler to "Crawler source type" as "Existing catalog tables". You can then choose the table created previously. 
+3. The default settings of the crawler will correct and realign the schema of the table and update all needed properties like normal.
+4. Run the Crawler to update table metadata according to files.

@@ -131,9 +131,6 @@ def devEndpointRole():
 
 glueRole = devEndpointRole()
 
-print(glueRole)
-
-
 devEndPoint = glue.create_dev_endpoint(
     EndpointName='BayMax',
     RoleArn=glueRole,

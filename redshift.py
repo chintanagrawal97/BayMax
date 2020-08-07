@@ -9,7 +9,7 @@ password ='Baymax123'
 redshift = boto3.client('redshift')
 
 
-def createRedshift(user,password,vpc,sgId):
+def createRedshift(user,password,sgId):
     response = redshift.create_cluster(
         DBName='bay-max',
         ClusterIdentifier='BayMax',
@@ -26,5 +26,5 @@ def createRedshift(user,password,vpc,sgId):
     )
     return response
 
-cluster = createRedshift(user,password,vpc,sgId)
+cluster = createRedshift(user,password,sgId)
 print(cluster)

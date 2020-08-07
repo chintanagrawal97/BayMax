@@ -1,0 +1,5 @@
+# Ignore Python Binaries 
+baymax/
+
+#Ignore Testing Files
+test123.py
